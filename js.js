@@ -1,9 +1,13 @@
-let number = 40;
+let number = 14;
 let even_row = 3;
 let rating_where_to_start = (number,even_row)=>{
   let pairs = Math.floor(number/(even_row+even_row+1));
   let rows_sum =pairs*(even_row+even_row+1)+1;
   let row = pairs * 2;
+  if(number%(even_row+even_row+1)==0){
+    rows_sum =( pairs-1) *(even_row+even_row+1)+1;
+    row = (pairs-1) * 2;
+  }
   let return_array = [];
   return_array.push(rows_sum);
   return_array.push(row);
