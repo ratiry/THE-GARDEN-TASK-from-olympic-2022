@@ -1,6 +1,15 @@
-let number = 100;
-let even_row = 10;
-
+let number = 40;
+let even_row = 3;
+let rating_where_to_start = (number,even_row)=>{
+  let pairs = Math.floor(number/(even_row+even_row+1));
+  let rows_sum =pairs*(even_row+even_row+1)+1;
+  let row = pairs * 2;
+  let return_array = [];
+  return_array.push(rows_sum);
+  return_array.push(row);
+  return return_array; 
+}
+console.log( rating_where_to_start(number,even_row));
 let define_rows = (number,even_row)=>{
   let rows_array = [];
   let rows_sum = 0;
