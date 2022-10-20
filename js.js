@@ -1,5 +1,5 @@
-let number = 17;
-let even_row = 7;
+let number = 145748412354 ;
+let even_row = 2145233 ;
 let rating_where_to_start = (number,even_row)=>{
   let pairs = Math.floor(number/(even_row+even_row+1));
   let rows_sum =pairs*(even_row+even_row+1)+1;
@@ -15,37 +15,6 @@ let rating_where_to_start = (number,even_row)=>{
 }
 let rating_array= rating_where_to_start(number,even_row);
 console.log(rating_array)
-let define_rows = (number,even_row)=>{
-  let rows_array = [];
-  let rows_sum = 0;
-  let i=0;
-  let fork = true;
-  while(fork){
-    if(i%2==0){
-      let array=[];
-      let prevoius_rows_sum = rows_sum;
-      rows_sum=rows_sum+even_row;
-      for(let ii=prevoius_rows_sum+1;ii<=rows_sum;ii++){
-        array.push(ii);
-      }
-      rows_array.push(array);
-    }else{
-      let array=[];
-      let prevoius_rows_sum = rows_sum;
-      rows_sum=rows_sum+even_row+1;
-      for(let ii=prevoius_rows_sum+1;ii<=rows_sum;ii++){
-        array.push(ii);
-
-      }
-      rows_array.push(array);
-    }
-    if(rows_sum>=number){
-      fork=false;
-    }
-    i++;
-  }
-  return rows_array;
-}
 let define_rows_2 = (number,even_row,start_row,start_number)=>{
   let rows_array = [];
   let rows_sum = start_number;
@@ -60,7 +29,6 @@ let define_rows_2 = (number,even_row,start_row,start_number)=>{
         array.push(ii);
       }
       rows_array.push(array);
-      debugger;
     }else{
       let array=[];
       let prevoius_rows_sum = rows_sum;
@@ -70,7 +38,6 @@ let define_rows_2 = (number,even_row,start_row,start_number)=>{
 
       }
       rows_array.push(array);
-      debugger;
     }
     if(rows_sum>=number){
       fork=false;
@@ -86,7 +53,6 @@ let seeking_for_element=(rows_array,number,row)=>{
     for(let ii=0;ii<rows_array[i].length;ii++){
       if(rows_array[i][ii] == number){
         return_array.push(i+1+row);
-        debugger;
         return_array.push(ii+1);
         permission_to_break_1=true;
         break;
@@ -101,5 +67,3 @@ let seeking_for_element=(rows_array,number,row)=>{
 let rows_array_2= define_rows_2(number,even_row,rating_array[1],rating_array[0]);
 let result = seeking_for_element(rows_array_2,number,rating_array[1]);
 console.log(result);
-let rows_array_= define_rows(number,even_row);
-console.log(rows_array_);
